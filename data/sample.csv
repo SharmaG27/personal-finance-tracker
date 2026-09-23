@@ -1,0 +1,8 @@
+date,description,amount,category,transaction_type
+2026-09-01,Student Loan Deposit,1200.00,Income,income
+2026-09-02,Campus Bookstore,85.50,Education,expense
+2026-09-03,Starbucks,4.75,Food & Drink,expense
+2026-09-05,Local Supermarket,62.10,Groceries,expense
+2026-09-10,Part-time Tutoring,150.00,Income,income
+2026-09-12,Netflix Subscription,15.99,Entertainment,expense
+2026-09-15,University Gym Pass,30.00,Health,expense

@@ -13,3 +13,8 @@ for transaction in transactions:
 print(f"Total Income: £{account.total_income():.2f}")
 print(f"Total Expenses: £{account.total_expenses():.2f}")
 print(f"Net Balance: £{account.net_balance():.2f}")
+
+breakdown = account.category_breakdown()
+print("Breakdown of expenses per category:")
+for category, amount in breakdown.items():
+    print(f"{category}: £{amount:.2f}")

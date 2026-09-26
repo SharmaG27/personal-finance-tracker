@@ -18,8 +18,6 @@ class Transaction:
 
 
 
-
-
 class Account:
     def __init__(self, account_name):
         self.account_name = account_name
@@ -36,3 +34,15 @@ class Account:
 
     def total_expenses(self):
         return sum(transaction.amount for transaction in self.transactions if transaction.is_expense())
+
+    def category_breakdown(self):
+        breakdown = {}
+        for transaction in self.transactions:
+            if transaction.transaction_type == "expense":
+                if transaction.category in breakdown:
+                    breakdown[transaction.category] += transaction.amount
+                else:
+                    breakdown[transaction.category] = transaction.amount
+
+        return breakdown
+

@@ -22,15 +22,26 @@ class CSVParser:
                 reader = csv.DictReader(file)
 
                 for row in reader:
-                    transaction = Transaction(
-                        row["date"],
-                        row["description"],
-                        row["amount"],
-                        row["category"],
-                        row["transaction_type"]
-                    )
 
-                    transactions.append(transaction)
+                    if not row.get("date") or not row.get("description") or not row.get("amount") or not row.get("category") or not row.get("transaction_type"):
+                        print(f"Missing required field in row: {row}")
+                        continue
+
+                    try:
+
+                        transaction = Transaction(
+                            row["date"],
+                            row["description"],
+                            row["amount"],
+                            row["category"],
+                            row["transaction_type"]
+                        )
+
+                        transactions.append(transaction)
+
+                    except (ValueError, KeyError) as e:
+                        print(f"Error parsing row: {row}")
+                        continue
 
 
 

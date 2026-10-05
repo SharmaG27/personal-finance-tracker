@@ -1,5 +1,6 @@
 from src.parsers import CSVParser
 from src.models import Account
+from src.visualisations import plot_category_breakdown
 
 parser = CSVParser("data/sample.csv")
 
@@ -28,5 +29,7 @@ print()
 
 for category, amount in breakdown_sorted:
     print(f"{category}: £{amount:.2f}")
+
+plot_category_breakdown(account)
 
 
